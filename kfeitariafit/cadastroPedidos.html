@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kfeitariaFit | Cadastro de Produtos</title>
+    <link rel="stylesheet" href="./assets/css/cadastroPedido.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <main class="main__cadastroPedidos">
+        <div class="left__cadastroPedidos">
+            <a href="index.html"><h1><img class="logo" src="./assets/imagem/Original on Transparent.png" alt="logo da kfeitaria fit"></h1></a>
+            <h2 id="cadastroPedido">Tela de Cadastro de Pedidos</h2>
+        </div>
+        <div class="right__cadastroPedidos">
+            <form action="https://api.sheetmonkey.io/form/hbyVjEutyA7VvpXU9qLMTv" method="post" class="card__cadastro">
+                <h1>Cadastro de Pedidos</h1>
+                <div class="text__field">
+                    <label>Cliente:<sup>*</sup></label>
+                    <input type="text" name="cliente" placeholder="Nome do Cliente" required>
+                </div>
+                <div class="text__field">
+                    <label>Telefone:<sup>*</sup></label>
+                    <input type="tel" name="telefone" placeholder="11 90000-0000" required>
+                </div>
+                <div class="text__field">
+                    <label>Produto:<sup>*</sup></label>
+                    <input type="text" name="produto" placeholder="Nome do Produto" required>
+                </div>
+                <div class="text__field">
+                    <label>Descrição:<sup>*</sup></label>
+                    <textarea name="descricao" cols="70" rows="5" name="mensagem" id="mensagem" class="input-padrao" placeholder="Digite sua mensagem" required></textarea>
+                </div>
+                <div class="text__field">
+                    <label>Quantidade:<sup>*</sup></label>
+                    <input type="text" name="quantidade" placeholder="Quantidade solicitada" required>
+                </div>
+                <div class="text__field">
+                    <label>Valor:<sup>*</sup></label>
+                    <input type="number" name="valor" placeholder="Valor do Produto" required>
+                </div>
+                <button class="btn__login">Salvar</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
