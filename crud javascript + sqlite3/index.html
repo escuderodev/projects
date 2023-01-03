@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Cliente</title>
+    <script type="text/javascript">
+        var db = openDatabase("NewDataBase", "2.0", "Mybase", 4048);
+        db.transaction(function(criar) {
+            criar.executeSql("create table clientes (id integer primary key, nome text, telefone text)");
+        });
+
+        function salvar() {
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            db.transaction(function(insert) {
+                insert.executeSql("insert into clientes (nome, telefone) values (?,?)",[nome,telefone]);
+            });
+        };
+    </script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Cadastro de Cliente</h1>
+            <form class="form" id="form">
+                <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+                <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
+                <button type="submit" id="botao" onclick="salvar()">Cadastrar</button>
+            </form>
+        </div>
+    </header>
+    <!-- <script src="./script.js"></script> -->
+</body>
+</html>

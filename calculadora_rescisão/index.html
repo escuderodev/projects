@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescição Trabalhista</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>CALCULADORA DE RESCISÃO TRABALHISTA</h1>
+            <form class="form_container" id="form">
+                <input type="number" name="salario" id="salario" placeholder="Salário Atual" required>
+                <input type="number" name="dias_mes" id="dias_mes" min="1" max="31" placeholder="Dias Trabalhados no Mês" required>
+                <input type="number" name="meses_ano" id="meses_ano" min="1" max="12" placeholder="Meses Trabalhados no Ano" required>
+                <input type="number" name="total_meses_trabalhados" id="total_meses_trabalhados" placeholder="Tempo de Trabalho em Meses" required>
+                <button type="submit" id="botao">Calcular</button>
+                <span id="resultado">Resultado aqui..</span>
+            </form>
+        </header>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
