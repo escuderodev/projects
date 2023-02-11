@@ -334,19 +334,19 @@ section .title::after{
     background: rgb(201, 6, 6);
 }
 .skills .skills-content .right .html::before{
-    width: 93%;
+    width: 70%;
 }
 .skills .skills-content .right .css::before{
-    width: 85%;
+    width: 60%;
 }
 .skills .skills-content .right .js::before{
-    width: 20%;
+    width: 60%;
 }
-.skills .skills-content .right .php::before{
-    width: 47%;
+.skills .skills-content .right .java::before{
+    width: 50%;
 }
 .skills .skills-content .right .mysql::before{
-    width: 42%;
+    width: 60%;
 }
 /*  sessão equipe  */
 .teams .title::after{
