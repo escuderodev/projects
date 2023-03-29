@@ -51,7 +51,6 @@ public class Cliente {
                 ", dtNascimento=" + dtNascimento +
                 '}';
 
-
     }
 
 }
