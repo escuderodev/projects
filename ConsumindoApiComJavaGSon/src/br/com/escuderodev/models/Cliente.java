@@ -50,6 +50,7 @@ public class Cliente {
                 ", email='" + email + '\'' +
                 ", dtNascimento=" + dtNascimento +
                 '}';
+
     }
 
 }
