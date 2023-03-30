@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #bf6550;
+    font-family: 'Roboto', sans-serif;
+    color: #f2f2f2;
+}
+
+.header_container {
+    background-color: #59211c;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f2f2f2;
+}
+
+input {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    margin: 1rem;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+#nome, #logradouro {
+    width: 600px;
+}
+
+#telefone, #cep {
+    width: 150px;
+}
+
+#numero, #estado {
+    width: 100px;
+}
+
+#cidade {
+    width: 400px;
+    margin-left: 45px;
+}
+
+button {
+    padding: .8rem 1rem;
+    font-size: 1rem;
+    width: 150px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background-color: #59211c;
+    color: #f2f2f2;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: red;
+    color: white;
+    transition: .5s all;
+}
+
+.form_container {
+    width: 70%;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+#nome {
+    margin-left: 43px;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.resultado {
+    background-color: white;
+    height: 50vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+}
+
+.logo {
+    height: 40px;
+    margin: 1rem;
+}
