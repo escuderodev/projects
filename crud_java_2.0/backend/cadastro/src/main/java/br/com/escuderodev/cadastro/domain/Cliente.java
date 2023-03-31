@@ -1,29 +1,31 @@
 package br.com.escuderodev.cadastro.domain;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
-
+@Entity
+@Table(name = "cliente")
 public class Cliente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idcliente")
     private Integer idcliente;
+    @Column(name = "nome", length = 100, nullable = true)
     private String nome;
+    @Column(name = "telefone", length = 12, nullable = true)
     private String telefone;
+    @Column(name = "logradouro", length = 100, nullable = true)
     private String logradouro;
+    @Column(name = "numero", length = 10, nullable = true)
     private String numero;
+    @Column(name = "complemento", length = 20, nullable = false)
     private String complemento;
+    @Column(name = "cidade", length = 100, nullable = true)
     private String cidade;
+    @Column(name = "estado", length = 2, nullable = true)
     private String estado;
+    @Column(name = "cep", length = 8, nullable = true)
     private String cep;
-
-//    constructor
-    public Cliente(DadosCadastroCliente dados) {
-        this.nome = dados.nome();
-        this.telefone = dados.telefone();
-        this.logradouro = dados.logradouro();
-        this.numero = dados.numero();
-        this.complemento = dados.complemento();
-        this.cidade = dados.cidade();
-        this.estado = dados.estado();
-        this.cep = dados.cep();
-    }
 
     //    getters and setters
     public Integer getIdcliente() {
@@ -98,31 +100,4 @@ public class Cliente {
         this.cep = cep;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cliente cliente = (Cliente) o;
-        return Objects.equals(idcliente, cliente.idcliente);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idcliente);
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "idcliente=" + idcliente +
-                ", nome='" + nome + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", logradouro='" + logradouro + '\'' +
-                ", numero='" + numero + '\'' +
-                ", complemento='" + complemento + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", estado='" + estado + '\'' +
-                ", cep='" + cep + '\'' +
-                '}';
-    }
 }
