@@ -1,4 +1,4 @@
-package br.com.escuderodev.cadastro;
+package br.com.escuderodev.cadastro.controller;
 
 import br.com.escuderodev.cadastro.DAO.IClienteDAO;
 import br.com.escuderodev.cadastro.domain.Cliente;
@@ -26,13 +26,13 @@ public class ClienteController {
         return newCliente;
     }
 
-    @PutMapping
+    @PutMapping("/{idcliente}")
     public Cliente atualizarCliente(@RequestBody Cliente cliente) {
         Cliente updateCliente = dao.save(cliente);
         return updateCliente;
     }
 
-    @DeleteMapping("/{idcliente")
+    @DeleteMapping("/{idcliente}")
     public Optional<Cliente> excluirCliente(@PathVariable Integer idcliente) {
         Optional<Cliente> cliente = dao.findById(idcliente);
         dao.deleteById(idcliente);

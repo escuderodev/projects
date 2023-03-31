@@ -1,8 +1,6 @@
 package br.com.escuderodev.cadastro.domain;
 
 import jakarta.persistence.*;
-
-import java.util.Objects;
 @Entity
 @Table(name = "cliente")
 public class Cliente {

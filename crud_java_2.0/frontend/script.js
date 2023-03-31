@@ -1,4 +1,4 @@
-const form = document.querySelector(".form");
+const form = document.querySelector(".form_container");
 const Inome = document.getElementById("nome");
 const Itelefone = document.getElementById("telefone");
 const Ilogradouro = document.getElementById("logradouro");
@@ -9,7 +9,7 @@ const Iestado = document.getElementById("estado");
 const Icep = document.getElementById("cep");
 
 function cadastrarCliente() {
-    fetch("http://localhost:8080/cliente"),
+    fetch("http://localhost:8080/cliente",
     {
         headers: {
             'Accept': 'application/json',
@@ -26,7 +26,7 @@ function cadastrarCliente() {
             estado: Iestado.value,
             cep: Icep.value
         })
-    }
+    })
     .then((res) => console.log(res))
     .catch((res) => console.log(res))
 }
