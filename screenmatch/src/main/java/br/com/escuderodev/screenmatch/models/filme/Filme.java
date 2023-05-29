@@ -1,17 +1,29 @@
 package br.com.escuderodev.screenmatch.models.filme;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "filmes")
 public class Filme {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idfilme;
     private String nome;
     private Integer duracaoEmMinutos;
     private Integer anoDeLancamento;
     private String genero;
 
+
     public Filme(DadosCadastroFilme dados) {
+        this.idfilme = dados.idfilme();
         this.nome = dados.nome();
         this.duracaoEmMinutos = dados.duracao();
         this.anoDeLancamento = dados.ano();
         this.genero = dados.genero();
+    }
+
+    public Filme() {
+
     }
 
     public String getNome() {
@@ -28,6 +40,14 @@ public class Filme {
 
     public String getGenero() {
         return genero;
+    }
+
+    public void setIdfilme(Long idfilme) {
+        this.idfilme = idfilme;
+    }
+
+    public Long getIdfilme() {
+        return idfilme;
     }
 
     @Override
