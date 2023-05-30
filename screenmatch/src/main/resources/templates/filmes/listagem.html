@@ -26,7 +26,7 @@
                 <td th:text="${filme.anoDeLancamento}"></td>
                 <td th:text="${filme.genero}"></td>
                 <td>
-                    <button><a th:href="@{/filmes/cadastro?id={id}(id=${filme.idfilme})}" id="editar">Editar</a></button>
+                    <button><a th:href="@{/filmes/formulario?id={id}(id=${filme.idfilme})}" id="editar">Editar</a></button>
                     <form action="/filmes" method="post">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="idfilme" th:value="${filme.idfilme}">
@@ -37,7 +37,7 @@
             </tbody>
         </table>
         <br>
-        <button id="novo_cadastro"><a href="/filmes/cadastro">Novo Cadastro</a></button>
+        <button id="novo_cadastro"><a href="/filmes/formulario">Novo Cadastro</a></button>
     </div>
 </body>
 </html>
