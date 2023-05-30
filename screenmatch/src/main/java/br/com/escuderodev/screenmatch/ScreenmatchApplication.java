@@ -1,16 +1,13 @@
-package br.com.escuderodev.cadastro;
+package br.com.escuderodev.screenmatch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Scanner;
-
 @SpringBootApplication
-public class CadastroApplication {
+public class ScreenmatchApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(CadastroApplication.class, args);
+		SpringApplication.run(ScreenmatchApplication.class, args);
 	}
 
 }
