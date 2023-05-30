@@ -6,6 +6,7 @@ import br.com.escuderodev.screenmatch.models.filme.FilmeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,11 @@ public class FilmeController {
     private FilmeRepository repository;
 
     @GetMapping("/cadastro")
-    public String carregaPaginaCadastroDeFilmes() {
+    public String carregaPaginaCadastroDeFilmes(Long idfilme, Model model) {
+        if (idfilme != null) {
+            var filme = repository.getReferenceById(idfilme);
+            model.addAttribute("filme", filme);
+        }
         return "filmes/form_cadastro";
     }
 
@@ -32,6 +37,12 @@ public class FilmeController {
     public String cadastrarFilme(DadosCadastroFilme dados) {
         var filme = new Filme(dados);
         repository.save(filme);
+        return "redirect:/filmes";
+    }
+
+    @DeleteMapping
+    public String removeFilme(Long idfilme) {
+        repository.deleteById(idfilme);
         return "redirect:/filmes";
     }
 }

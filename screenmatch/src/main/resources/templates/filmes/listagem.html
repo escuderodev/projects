@@ -13,9 +13,10 @@
             <thead>
             <tr>
                 <th>NOME</th>
-                <th>DURAÇÃO</th>
+                <th>DURAÇÃO EM MINUTOS</th>
                 <th>ANO DE LANÇAMENTO</th>
                 <th>GÊNERO</th>
+                <th>AÇÕES</th>
             </tr>
             </thead>
             <tbody>
@@ -24,11 +25,19 @@
                 <td th:text="${filme.duracaoEmMinutos}"></td>
                 <td th:text="${filme.anoDeLancamento}"></td>
                 <td th:text="${filme.genero}"></td>
+                <td>
+                    <button><a th:href="@{/filmes/cadastro?id={id}(id=${filme.idfilme})}" id="editar">Editar</a></button>
+                    <form action="/filmes" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="idfilme" th:value="${filme.idfilme}">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>
         <br>
-        <a href="/filmes/cadastro">Novo Cadastro</a>
+        <button id="novo_cadastro"><a href="/filmes/cadastro">Novo Cadastro</a></button>
     </div>
 </body>
 </html>

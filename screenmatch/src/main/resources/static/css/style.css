@@ -55,7 +55,8 @@ img {
 
 button {
     font-family: inherit;
-    font-size: inherit;
+    font-size: 1rem;
+    font-weight: bold;
     color: inherit;
     font-weight: inherit;
     padding: 0;
@@ -63,6 +64,15 @@ button {
     background-color: #154580;
     padding: .5rem 1rem;
     cursor: pointer;
+    width: 130px;
+}
+
+#editar {
+    text-decoration: none;
+}
+
+#novo_cadastro {
+    width: 140px;
 }
 
 button:hover {
@@ -73,11 +83,12 @@ button:hover {
 input {
     border: none;
     color: black;
+    background-color: white;
     font-size: inherit;
     font-weight: inherit;
     font-family: inherit;
     padding: .5rem 1rem;
-    width: 50%;
+    width: 40%;
 }
 
 textarea {
