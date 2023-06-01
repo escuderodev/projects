@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+  <title>Listagem de Clientes</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <h1>Listagem de Clientes</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>NOME</th>
+      <th>TELEFONE</th>
+      <th>ENDEREÇO</th>
+      <th>RESTRIÇÃO</th>
+      <th>AÇÕES</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cliente : ${lista}">
+      <td th:text="${cliente.nome}"></td>
+      <td th:text="${cliente.telefone}"></td>
+      <td th:text="${cliente.endereco}"></td>
+      <td th:text="${cliente.restricao}"></td>
+      <td>
+        <button><a th:href="@{/clientes/formulario?id={id}(id=${cliente.idcliente})}" id="editar">Editar</a></button>
+        <form action="/clientes" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="idcliente" th:value="${cliente.idcliente}">
+          <button type="submit">Excluir</button>
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br>
+  <button id="novo_cadastro"><a href="/clientes/formulario">Novo Cadastro</a></button>
+</div>
+</body>
+</html>

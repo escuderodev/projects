@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Cadastro de Clientes</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h1>Cadastro de Clientes</h1>
+        <form method="post" action="/clientes">
+
+            <input type="hidden" name="_method" value="put" th:if="${cliente != null}">
+            <input type="hidden" name="idfilme" th:value="${cliente?.idcliente}">
+
+            <div>
+                <label for="nome">Nome:</label>
+                <input id="nome" name="nome" required th:value="${cliente?.nome}">
+            </div>
+
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input id="telefone" name="telefone" required th:value="${cliente?.telefone}">
+            </div>
+
+            <div>
+                <label for="endereco">Endereço:</label>
+                <input id="endereco" name="endereco" required th:value="${cliente?.endereco}">
+            </div>
+
+            <div>
+                <label for="restricao">Restrição:</label>
+                <input id="restricao" name="restricao" required th:value="${cliente?.restricao}">
+            </div>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+</body>
+</html>
