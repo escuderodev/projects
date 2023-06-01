@@ -18,17 +18,17 @@ public class CustomerController {
     private CustomerRepository repository;
 
     @GetMapping("/formulario")
-    public String loadFormPage(Long idcliente, Model model) {
-        if (idcliente != null) {
-            var customer = repository.getReferenceById(idcliente);
-            model.addAttribute("cliente", customer);
+    public String loadFormPage(Long id, Model model) {
+        if (id != null) {
+            var customer = repository.getReferenceById(id);
+            model.addAttribute("customer", customer);
         }
         return "customer/formulario";
     }
 
     @GetMapping
     public String loadListPage(Model model) {
-        model.addAttribute("cliente", repository.findAll());
+        model.addAttribute("lista", repository.findAll());
         return "customer/listagem";
     }
 

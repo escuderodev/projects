@@ -20,16 +20,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="cliente : ${lista}">
-      <td th:text="${cliente.nome}"></td>
-      <td th:text="${cliente.telefone}"></td>
-      <td th:text="${cliente.endereco}"></td>
-      <td th:text="${cliente.restricao}"></td>
+    <tr th:each="customer : ${lista}">
+      <td th:text="${customer.nome}"></td>
+      <td th:text="${customer.telefone}"></td>
+      <td th:text="${customer.endereco}"></td>
+      <td th:text="${customer.restricao}"></td>
       <td>
-        <button><a th:href="@{/clientes/formulario?id={id}(id=${cliente.idcliente})}" id="editar">Editar</a></button>
+        <button><a th:href="@{/clientes/formulario?id={id}(id=${customer.idcliente})}" id="editar">Editar</a></button>
         <form action="/clientes" method="post">
           <input type="hidden" name="_method" value="delete">
-          <input type="hidden" name="idcliente" th:value="${cliente.idcliente}">
+          <input type="hidden" name="idcliente" th:value="${customer.idcliente}">
           <button type="submit">Excluir</button>
         </form>
       </td>
