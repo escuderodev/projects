@@ -47,7 +47,7 @@ q:before, q:after {
     align-items: center;
     gap: 1rem;
     width: 40vw;
-    height: 50vh;
+    height: 60vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -72,6 +72,20 @@ img {
     width: inherit;
 }
 
+.logo {
+    width: 350px;
+}
+
+.link {
+    font-weight: bold;
+    color: var(--cinza-claro);
+}
+
+p {
+    margin-top: 1rem;
+    color: var(--marrom-escuro);
+}
+
 button {
     font-family: inherit;
     font-size: 1rem;
@@ -90,12 +104,10 @@ button {
     text-decoration: none;
 }
 
-#novo_cadastro {
-    width: 140px;
-}
-
-#voltar {
+#salvar, #novo_cadastro, #voltar {
     width: 160px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
 }
 
 button:hover {
@@ -111,7 +123,8 @@ input {
     font-weight: inherit;
     font-family: inherit;
     padding: .5rem 1rem;
-    width: 40%;
+    margin-bottom: 1rem;
+    width: 80%;
     outline: none;
 }
 
@@ -252,9 +265,9 @@ form div {
 h1 {
     color: var(--marrom-escuro);
     font-weight: bold;
-    font-size: 24px;
+    font-size: 30px;
     text-transform: uppercase;
-    margin: 20px 0;
+    margin: 2rem 0 1rem;
 }
 
 h2 {
@@ -272,11 +285,24 @@ form div input {
     padding: 1em
 }
 
+.form_container {
+    border: solid 1px var(--marrom-escuro);
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+}
+
 label {
     line-height: 1.5;
     padding: 0 0 .1em 1em;
     font-weight: 700;
     color: var(--marrom-escuro);
+    margin-top: 1rem;
+    text-transform: uppercase;
 }
 
 input[type="submit"] {
