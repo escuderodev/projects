@@ -5,17 +5,31 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/listagem.css" th:href="@{/css/listagem.css}">
   <title>Lista de Pedidos</title>
 </head>
 <body>
-  <div class="container">
+<header class="nav-container">
+  <a href="/"><img th:src="@{/img/Original on Transparent.png}" alt="logo da kfeitariafit" class="logo"></a>
+  <nav>
+    <ul class="menu_container nav">
+      <li class="nav-item"><a href="/">Lista de Pedidos</a></li>
+      <li class="nav-item"><a href="/formulario">Cadastrar Pedidos</a></li>
+    </ul>
+  </nav>
+</header>
+<main class="main-container">
+  <div class="list-container">
     <h1>Lista de Pedidos</h1>
     <table class="table">
       <thead class="thead-dark">
       <tr>
-        <th scope="col"CLIENTE</th>
         <th scope="col">ORÇAMENTO</th>
         <th scope="col">VALOR R$</th>
+        <th scope="col">CLIENTE</th>
+        <th scope="col">TELEFONE</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">CONTATO</th>
         <th scope="col">DATA DA ENTREGA</th>
         <th scope="col">DATA DO PAGAMENTO</th>
         <th scope="col">AÇÕES</th>
@@ -23,23 +37,31 @@
       </thead>
       <tbody>
       <tr class="table-light" th:each="pedido : ${listaDePedidos}">
-        <td th:text="${pedido.cliente}"></td>
         <td th:text="${pedido.orcamento}"></td>
         <td th:text="${pedido.valor}"></td>
-        <td th:text="${pedido.dataDeEntrega}"></td>
-        <td th:text="${pedido.dataDePagamento}"></td>
-        <td>
-          <button class="btn btn-outline-primary"><a th:href="@{/formulario?id={id}(id=${pedido.idpedido})}">Editar</a></button>
-          <form action="/pedidos" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input type="hidden" name="idpedido" th:value="${pedido.idpedido}">
-            <button class="btn btn-outline-danger" type="submit">Excluir</button>
-          </form>
+        <td th:text="${pedido.cliente}"></td>
+        <td th:text="${pedido.telefone}"></td>
+        <td th:text="${pedido.email}"></td>
+        <td th:text="${pedido.contato}"></td>
+        <td th:text="${pedido.entrega}"></td>
+        <td th:text="${pedido.pagamento}"></td>
+        <td class="listagem-acoes">
+          <div>
+            <button class="btn btn-outline-primary btn-listagem"><a th:href="@{/formulario?id={id}(id=${pedido.idpedido})}">Editar</a></button>
+          </div>
+          <div>
+            <form action="/" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input type="hidden" name="idpedido" th:value="${pedido.idpedido}">
+              <button class="btn btn-outline-danger btn-listagem" type="submit">Excluir</button>
+            </form>
+          </div>
         </td>
       </tr>
       </tbody>
     </table>
-    <button class="btn btn-outline-primary"><a href="/formulario">Novo Cadastro</a></button>
+    <button class="btn btn-danger"><a href="/formulario">Novo Cadastro</a></button>
   </div>
+</main>
 </body>
 </html>
