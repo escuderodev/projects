@@ -1,9 +1,14 @@
 package br.com.alura.mvc.mudi.models;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
 public class Pedido {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idproduto;
     private String nomeProduto;
     private BigDecimal valorNegociado;
     private LocalDate dataDaEntrega;
