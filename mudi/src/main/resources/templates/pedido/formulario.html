@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Home</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron mb-0">
+      <h1 class="display-4">Novo Pedido</h1>
+    </div>
+    <form action="/pedido/novo" method="post">
+      <div>
+        <label for="produto">Produto:</label>
+        <input type="text" name="produto" id="produto" placeholder="nome do produto" required>
+        <small>Informe o nome do produto.</small>
+      </div>
+      <div>
+        <label for="urlProduto">Url:</label>
+        <input type="text" name="urlProduto" id="urlProduto" placeholder="url do produto" required>
+        <small>Procure o produto que você deseja em um site e cole a url aqui.</small>
+      </div>
+      <div>
+        <label for="urlImagem">Imagem:</label>
+        <input type="text" name="urlImagem" id="urlImagem" placeholder="url da imagem" required>
+        <small>Cole a url da imagem aqui.</small>
+      </div>
+      <div>
+        <label for="descricao">Produto:</label>
+        <textarea name="descricao" id="descricao" placeholder="Adicione detalhes sobre o produto" required></textarea>
+      </div>
+      <button type="submit">Salvar</button>
+    </form>
+
+  </div>
+</body>
+</html>
