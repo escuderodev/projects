@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/formulario.css" th:href="@{/css/formulario.css}">
+  <title>Cadastro de Pedido</title>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <p class="logo">ControlPed</p>
+    </div>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="#">Lista de Pedidos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Cadastro de Pedidos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <h1>Listagem de Clientes</h1>
+    <table>
+      <thead>
+      <tr>
+        <th>NOME</th>
+        <th>TELEFONE</th>
+        <th>ENDEREÇO</th>
+        <th>RESTRIÇÃO</th>
+        <th>AÇÕES</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="customer : ${lista}">
+        <td th:text="${customer.nome}"></td>
+        <td th:text="${customer.telefone}"></td>
+        <td th:text="${customer.endereco}"></td>
+        <td th:text="${customer.restricao}"></td>
+        <td>
+          <button><a th:href="@{/clientes/formulario?id={id}(id=${customer.idcliente})}" id="editar">Editar</a></button>
+          <form action="/clientes" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="hidden" name="idcliente" th:value="${customer.idcliente}">
+            <button type="submit">Excluir</button>
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="footer">
+    <p>Desenvolvido por <a class="footer_link" href="https://escuderodev.com.br/" target="_blank">Escudero<span>Dev</span></a> - 2023</p>
+  </footer>
+</body>
+</html>
