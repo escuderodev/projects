@@ -61,4 +61,5 @@ public class Pedido {
         this.prazoPagamento = dados.prazoPagamento();
         this.numeroOP = dados.numeroOP();
     }
+
 }
