@@ -16,6 +16,16 @@ public class Pedido {
     private String urlDaImagem;
     private String descricao;
 
+    public Pedido(DadosCadastroPedido dados) {
+        this.nomeProduto = dados.produto();
+        this.urlDoProduto = dados.urlProduto();
+        this.urlDaImagem = dados.urlImagem();
+        this.descricao = dados.descricao();
+    }
+
+    public Pedido() {
+    }
+
     public String getNomeProduto() {
         return nomeProduto;
     }
