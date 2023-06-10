@@ -2,7 +2,7 @@ package br.com.escuderodev.vendas.models;
 
 import java.math.BigDecimal;
 
-public record AtualizaDadosPedido(
+public record DadosAtualizaPedido(
         Long idpedido,
         String cliente,
         String trabalho,

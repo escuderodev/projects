@@ -48,7 +48,7 @@ public class Pedido {
     public Pedido() {
     }
 
-    public void atualizaDados(AtualizaDadosPedido dados) {
+    public void atualizaDados(DadosAtualizaPedido dados) {
         this.cliente = dados.cliente();
         this.trabalho = dados.trabalho();
         this.orcamento = dados.orcamento();

@@ -1,6 +1,6 @@
 package br.com.escuderodev.vendas.controller;
 
-import br.com.escuderodev.vendas.models.AtualizaDadosPedido;
+import br.com.escuderodev.vendas.models.DadosAtualizaPedido;
 import br.com.escuderodev.vendas.models.DadosCadastroPedido;
 import br.com.escuderodev.vendas.models.Pedido;
 import br.com.escuderodev.vendas.models.PedidoRepository;
@@ -38,16 +38,16 @@ public class PedidoController {
         var pedido = new Pedido(dados);
         repository.save(pedido);
 
-        return "redirect:/pedidos";
+        return "redirect:/pedido";
     }
 
     @PutMapping
     @Transactional
-    public String atualizaDadosPedido(AtualizaDadosPedido dados) {
+    public String atualizaDadosPedido(DadosAtualizaPedido dados) {
         var pedido = repository.getReferenceById(dados.idpedido());
         pedido.atualizaDados(dados);
 
-        return "redirect:/pedidos";
+        return "redirect:/pedido";
     }
 
     @DeleteMapping
@@ -55,7 +55,7 @@ public class PedidoController {
     public String deletaPedido(Long idpedido) {
         repository.deleteById(idpedido);
 
-        return"redirect:/pedidos";
+        return"redirect:/pedido";
     }
 
 }

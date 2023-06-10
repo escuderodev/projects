@@ -84,3 +84,69 @@ span {
     font-weight: bold;
 }
 
+/*página listagem*/
+
+.table {
+    text-align: center;
+}
+.main_container {
+    width: 95vw;
+    margin: auto;
+}
+
+.lista_title {
+    color: white;
+}
+
+td, th {
+    background-color: wheat;
+    border-bottom: 1px solid black;
+    font-size: .8rem;
+}
+
+.td_acoes {
+    display: flex;
+    gap: .5rem;
+}
+
+.main-lista {
+    height: 80vh;
+}
+
+/*.td_acoes {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    gap: .5rem;*/
+/*}*/
+
+#editar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#editar:hover {
+    background-color: yellow;
+    color: black;
+    transition: .5s all;
+}
+
+#btn_excluir {
+   width: 64px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#btn_excluir:hover {
+    background-color: yellow;
+    color: black;
+    transition: .5s all;
+}
