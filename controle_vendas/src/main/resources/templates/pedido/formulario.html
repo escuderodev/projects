@@ -46,19 +46,19 @@
             <label for="calculo">Cálculo:</label>
             <input type="text" class="form-control" name="calculo" id="calculo" placeholder="00000" required th:value="${pedido?.calculo}">
           </div>
-          <div class="form-group col-4">
+        </div>
+        <div class="form-group row">
+<!--          <div class="form-group col-3">-->
+<!--            <label for="comissao">Valor da Comissão R$:</label>-->
+<!--            <input type="text" class="form-control" name="comissao" id="comissao" placeholder="0.00" required th:value="${pedido?.comissao}">-->
+<!--          </div>-->
+          <div class="form-group col-3">
             <label for="valor">Valor R$:</label>
             <input type="text" class="form-control" name="valor" id="valor" placeholder="0.00" required th:value="${pedido?.valor}">
           </div>
-        </div>
-        <div class="form-group row">
           <div class="form-group col-3">
             <label for="percentual">Percentual:</label>
             <input type="text" class="form-control" name="percentual" id="percentual" placeholder="00" required th:value="${pedido?.percentual}">
-          </div>
-          <div class="form-group col-3">
-            <label for="comissao">Valor da Comissão R$:</label>
-            <input type="text" class="form-control" name="comissao" id="comissao" placeholder="0.00" required th:value="${pedido?.comissao}">
           </div>
           <div class="form-group col-3">
             <label for="dataEnvioNF">Envio NF:</label>
@@ -79,7 +79,7 @@
             <input type="text" class="form-control" name="numeroOP" id="numeroOP" placeholder="00000" required th:value="${pedido?.numeroOP}">
           </div>
         </div>
-        <button type="submit" class="btn btn-outline-primary">Enviar</button>
+        <button type="submit" class="btn btn-outline-primary">Salvar</button>
       </form>
     </div>
   </main>

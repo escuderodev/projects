@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+
 @Controller
 @RequestMapping("/pedido")
 public class PedidoController {
@@ -36,6 +38,7 @@ public class PedidoController {
     @Transactional
     public String cadastraPedido(DadosCadastroPedido dados) {
         var pedido = new Pedido(dados);
+        pedido.setComissao((pedido.getPercentual().divide(new BigDecimal(100))).multiply(pedido.getValor()));
         repository.save(pedido);
 
         return "redirect:/pedido";
@@ -46,7 +49,7 @@ public class PedidoController {
     public String atualizaDadosPedido(DadosAtualizaPedido dados) {
         var pedido = repository.getReferenceById(dados.idpedido());
         pedido.atualizaDados(dados);
-
+        pedido.setComissao((pedido.getPercentual().divide(new BigDecimal(100))).multiply(pedido.getValor()));
         return "redirect:/pedido";
     }
 

@@ -38,7 +38,6 @@ public class Pedido {
         this.calculo = dados.calculo();
         this.valor = dados.valor();
         this.percentual = dados.percentual();
-        this.comissao = dados.comissao();
         this.dataEnvioNF = dados.dataEnvioNF();
         this.dataVencimentoBoleto = dados.dataVencimentoBoleto();
         this.prazoPagamento = dados.prazoPagamento();
@@ -55,7 +54,6 @@ public class Pedido {
         this.calculo = dados.calculo();
         this.valor = dados.valor();
         this.percentual = dados.percentual();
-        this.comissao = dados.comissao();
         this.dataEnvioNF = dados.dataEnvioNF();
         this.dataVencimentoBoleto = dados.dataVencimentoBoleto();
         this.prazoPagamento = dados.prazoPagamento();
