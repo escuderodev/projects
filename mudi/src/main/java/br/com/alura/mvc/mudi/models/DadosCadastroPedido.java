@@ -1,4 +1,15 @@
 package br.com.alura.mvc.mudi.models;
 
-public record DadosCadastroPedido(String produto, String urlProduto, String urlImagem, String descricao) {
+import jakarta.validation.constraints.NotBlank;
+
+public record DadosCadastroPedido(
+
+        @NotBlank
+        String nomeProduto,
+        @NotBlank
+        String urlProduto,
+        @NotBlank
+        String urlImagem,
+        String descricao
+    ) {
 }
