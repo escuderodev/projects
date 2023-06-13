@@ -2,49 +2,45 @@
 <html lang="pt-br"
       xmlns:th="http://thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <title>Home</title>
-</head>
-<body>
-  <div class="container">
-    <div class="jumbotron mb-0">
-      <h1 class="display-4">Novo Pedido</h1>
+  <head th:replace="~{template :: head}"></head>
+  <body>
+    <div th:replace="~{template :: logo}"></div>
+
+    <div class="container">
+      <div th:replace="~{template :: titulo('Novo Pedido')}"></div>
+      <div class="card mt-3">
+        <form th:object="${dadosCadastroPedido}" class="card-body" action="/pedido/novo" method="post">
+          <div class="form-group">
+            <label for="nomeProduto">Produto:</label>
+            <input th:field="*{nomeProduto}" th:errorclass="is-invalid" class="form-control" type="text" id="nomeProduto" placeholder="nome do produto">
+            <small>Informe o nome do produto.</small>
+              <div class="invalid-feedback" th:erros="*{nomeProduto}">
+                Erro - nome do produto é obrigatório!
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="urlProduto">Url:</label>
+            <input th:field="*{urlProduto}" th:errorclass="is-invalid" class="form-control" type="text" id="urlProduto" placeholder="url do produto">
+            <small>Procure o produto que você deseja em um site e cole a url aqui.</small>
+              <div class="invalid-feedback" th:erros="*{urlProduto}">
+                Erro - url do produto é obrigatório!
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="urlImagem">Imagem:</label>
+            <input th:field="*{urlImagem}" th:errorclass="is-invalid" class="form-control" type="text" id="urlImagem" placeholder="url da imagem">
+            <small>Cole a url da imagem aqui.</small>
+              <div class="invalid-feedback" th:erros="*{urlImagem}">
+                Erro - url da imagem é obrigatório!
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="descricao">Produto:</label>
+            <textarea th:field="*{descricao}" class="form-control" id="descricao" placeholder="Adicione detalhes sobre o produto"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Salvar</button>
+        </form>
+      </div>
     </div>
-    <div class="card mt-3">
-      <form th:object="${dadosCadastroPedido}" class="card-body" action="/pedido/novo" method="post">
-        <div class="form-group">
-          <label for="nomeProduto">Produto:</label>
-          <input th:field="*{nomeProduto}" th:errorclass="is-invalid" class="form-control" type="text" id="nomeProduto" placeholder="nome do produto">
-          <small>Informe o nome do produto.</small>
-            <div class="invalid-feedback" th:erros="*{nomeProduto}">
-              Erro - nome do produto é obrigatório!
-            </div>
-        </div>
-        <div class="form-group">
-          <label for="urlProduto">Url:</label>
-          <input th:field="*{urlProduto}" th:errorclass="is-invalid" class="form-control" type="text" id="urlProduto" placeholder="url do produto">
-          <small>Procure o produto que você deseja em um site e cole a url aqui.</small>
-            <div class="invalid-feedback" th:erros="*{urlProduto}">
-              Erro - url do produto é obrigatório!
-            </div>
-        </div>
-        <div class="form-group">
-          <label for="urlImagem">Imagem:</label>
-          <input th:field="*{urlImagem}" th:errorclass="is-invalid" class="form-control" type="text" id="urlImagem" placeholder="url da imagem">
-          <small>Cole a url da imagem aqui.</small>
-            <div class="invalid-feedback" th:erros="*{urlImagem}">
-              Erro - url da imagem é obrigatório!
-            </div>
-        </div>
-        <div class="form-group">
-          <label for="descricao">Produto:</label>
-          <textarea th:field="*{descricao}" class="form-control" id="descricao" placeholder="Adicione detalhes sobre o produto"></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Salvar</button>
-      </form>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
