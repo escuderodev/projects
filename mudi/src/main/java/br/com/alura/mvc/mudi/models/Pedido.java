@@ -15,12 +15,15 @@ public class Pedido {
     private String urlDoProduto;
     private String urlDaImagem;
     private String descricao;
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
 
     public Pedido(DadosCadastroPedido dados) {
         this.nomeProduto = dados.nomeProduto();
         this.urlDoProduto = dados.urlProduto();
         this.urlDaImagem = dados.urlImagem();
         this.descricao = dados.descricao();
+        this.status = StatusPedido.AGUARDANDO;
     }
 
     public Pedido() {
@@ -72,5 +75,13 @@ public class Pedido {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
     }
 }
