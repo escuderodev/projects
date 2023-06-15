@@ -20,6 +20,7 @@ public class PedidoController {
 
     @GetMapping("formulario")
     public String loadFormPage(DadosCadastroPedido dados) {
+
         return "pedido/formulario";
     }
 
