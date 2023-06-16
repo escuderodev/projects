@@ -1,6 +1,7 @@
 package br.com.escuderodev.vendas.models;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public record DadosCadastroPedido(
         Long idpedido,
@@ -11,8 +12,7 @@ public record DadosCadastroPedido(
         BigDecimal valor,
         BigDecimal percentual,
         BigDecimal comissao,
-        String dataEnvioNF,
-        String dataVencimentoBoleto,
+        LocalDate dataEnvioNF,
         int prazoPagamento,
         String numeroOP) {
 }

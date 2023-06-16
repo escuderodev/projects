@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.time.temporal.ChronoUnit;
 
 @Controller
 @RequestMapping("/pedido")
@@ -39,6 +40,7 @@ public class PedidoController {
     public String cadastraPedido(DadosCadastroPedido dados) {
         var pedido = new Pedido(dados);
         pedido.setComissao((pedido.getPercentual().divide(new BigDecimal(100))).multiply(pedido.getValor()));
+        pedido.setDataVencimentoBoleto(pedido.getDataEnvioNF().plusDays(pedido.getPrazoPagamento()));
         repository.save(pedido);
 
         return "redirect:/pedido";
@@ -50,6 +52,7 @@ public class PedidoController {
         var pedido = repository.getReferenceById(dados.idpedido());
         pedido.atualizaDados(dados);
         pedido.setComissao((pedido.getPercentual().divide(new BigDecimal(100))).multiply(pedido.getValor()));
+        pedido.setDataVencimentoBoleto(pedido.getDataEnvioNF().plusDays(pedido.getPrazoPagamento()));
         return "redirect:/pedido";
     }
 

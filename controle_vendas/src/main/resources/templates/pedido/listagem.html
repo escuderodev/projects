@@ -11,7 +11,7 @@
 <body>
   <header class="header">
     <div>
-      <p class="logo">Control<span>Ped</span></p>
+      <p class="logo"><a href="/pedido">Control<span>Ped</span></a></p>
     </div>
     <nav>
       <ul class="nav">
@@ -46,11 +46,11 @@
         <td th:text="${pedido.trabalho}"></td>
         <td th:text="${pedido.orcamento}"></td>
         <td th:text="${pedido.calculo}"></td>
-        <td th:text="${pedido.valor}"></td>
+        <td th:text="${'R$ ' + #numbers.formatDecimal(pedido.valor,1,2,'COMMA')}"></td>
         <td th:text="${pedido.percentual}"></td>
-        <td th:text="${pedido.comissao}"></td>
-        <td th:text="${pedido.dataEnvioNF}"></td>
-        <td th:text="${pedido.dataVencimentoBoleto}"></td>
+        <td th:text="${'R$ ' + #numbers.formatDecimal(pedido.comissao,1,2,'COMMA')}"></td>
+        <td th:text="${#temporals.format(pedido.dataEnvioNF, 'dd/MM/yyyy')}"></td>
+        <td th:text="${#temporals.format(pedido.dataVencimentoBoleto, 'dd/MM/yyyy')}"></td>
         <td th:text="${pedido.prazoPagamento}"></td>
         <td th:text="${pedido.numeroOP}"></td>
         <td>

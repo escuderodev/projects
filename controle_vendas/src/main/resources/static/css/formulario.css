@@ -62,6 +62,11 @@ body {
     font-weight: bold;
 }
 
+.logo a {
+    color: black;
+    text-decoration: none;
+}
+
 .nav-link {
     color: black;
 }
@@ -112,13 +117,6 @@ td, th {
 .main-lista {
     height: 80vh;
 }
-
-/*.td_acoes {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    gap: .5rem;*/
-/*}*/
 
 #editar {
     display: flex;

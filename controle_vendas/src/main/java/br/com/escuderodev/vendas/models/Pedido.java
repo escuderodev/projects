@@ -9,6 +9,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -25,8 +26,8 @@ public class Pedido {
     private BigDecimal valor;
     private BigDecimal percentual;
     private BigDecimal comissao;
-    private String dataEnvioNF;
-    private String dataVencimentoBoleto;
+    private LocalDate dataEnvioNF;
+    private LocalDate dataVencimentoBoleto;
     private int prazoPagamento;
     private String numeroOP;
 
@@ -39,7 +40,7 @@ public class Pedido {
         this.valor = dados.valor();
         this.percentual = dados.percentual();
         this.dataEnvioNF = dados.dataEnvioNF();
-        this.dataVencimentoBoleto = dados.dataVencimentoBoleto();
+//        this.dataVencimentoBoleto = dados.dataVencimentoBoleto();
         this.prazoPagamento = dados.prazoPagamento();
         this.numeroOP = dados.numeroOP();
     }
@@ -55,7 +56,7 @@ public class Pedido {
         this.valor = dados.valor();
         this.percentual = dados.percentual();
         this.dataEnvioNF = dados.dataEnvioNF();
-        this.dataVencimentoBoleto = dados.dataVencimentoBoleto();
+//        this.dataVencimentoBoleto = dados.dataVencimentoBoleto();
         this.prazoPagamento = dados.prazoPagamento();
         this.numeroOP = dados.numeroOP();
     }
