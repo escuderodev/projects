@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout">
+<head th:replace="~{template :: head}"></head>
+<body>
+
+<header th:replace="~{template :: header}"></header>
+
+<main class="main_home">
+  <div class="form-group">
+    <form action="/produto" method="post" class="form_container">
+      <div class="form-group">
+        <h1 class="title">Módulo Administrativo</h1>
+      </div>
+      <div class="btn_container_home">
+        <div class="form-group">
+          <button type="button" class="btn btn-danger"><a class="btn-home" href="/usuario">Usuários</a></button>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary"><a class="btn-home" href="/produto">Produtos</a></button>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-warning"><a class="btn-home btn-home-yellow" href="#">Pedidos</a></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer th:replace="~{template :: footer}"></footer>
+</body>
+</html>

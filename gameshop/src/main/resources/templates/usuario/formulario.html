@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout">
+<head th:replace="~{template :: head}"></head>
+<body>
+
+<header th:replace="~{template :: header}"></header>
+
+<main class="main_produto">
+    <div class="form-group">
+        <form action="/usuario" method="post" class="form_container">
+            <div class="form-group">
+                <h1 class="title">Cadastro de Usuário</h1>
+                <input type="hidden" name="_method" value="put" th:if="${usuario != null}">
+                <input type="hidden" name="idusuario" th:value="${usuario?.idusuario}">
+            </div>
+            <div class="form-group col-12">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do Usuário" required th:value="${usuario?.nome}">
+            </div>
+            <div class="form-group col-12">
+                <label for="usuario">Usuário:</label>
+                <input type="text" class="form-control" name="usuario" id="usuario" placeholder="usuario" required th:value="${usuario?.usuario}">
+            </div>
+            <div class="form-group col-4">
+                <label for="senha">Senha:</label>
+                <input type="password" class="form-control" name="senha" id="senha" required th:value="${usuario?.senha}">
+            </div>
+            <button type="submit" class="btn btn-outline-primary ml-3">Salvar</button>
+        </form>
+    </div>
+</main>
+
+<footer th:replace="~{template :: footer}"></footer>
+</body>
+</html>

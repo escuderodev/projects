@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout">
+<head th:replace="~{template :: head}"></head>
+
+<body>
+
+<header th:replace="~{template :: header}"></header>
+
+<main class="main main_container main-lista">
+    <div class="usuario_container">
+        <div>
+            <h1 class="lista_title">Lista de Usuários</h1>
+        </div>
+        <div>
+            <button type="button" class="btn btn-danger btn_cadastro"><a class="btn-home" href="/usuario/formulario">Novo Usuário</a></button>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col" class="col-4">NOME</th>
+            <th scope="col" class="col-2">USUARIO</th>
+            <th scope="col" class="col-2">SENHA</th>
+            <th scope="col" class="col-2">AÇÕES</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usuario : ${listaDeUsuarios}">
+            <td th:text="${usuario.nome}"></td>
+            <td th:text="${usuario.usuario}"></td>
+            <td th:text="${usuario.senha}"></td>
+            <td>
+                <div class="td_acoes">
+                    <button><a th:href="@{/usuario/formulario?id={id}(id=${usuario.idusuario})}" id="editar">Editar</a></button>
+                    <form action="/produto" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="idusuario" th:value="${usuario.idusuario}">
+                        <button type="submit" id="btn_excluir">Excluir</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<footer th:replace="~{template :: footer}"></footer>
+</body>
+</html>
