@@ -50,17 +50,9 @@ public class UsuarioController {
     @PutMapping
     @Transactional
     public String atualizaUsuario(DadosAtualizaUsuario dados) {
-        Usuario usuario = repository.getReferenceByUsuario(dados.usuario());
+        Usuario usuario = repository.getReferenceById(dados.idusuario());
         usuario.atualizaDados(dados);
         usuario.setSenha(encoder.encode(dados.senha()));
         return "redirect:/usuario";
     }
-
-    @DeleteMapping
-    @Transactional
-    public String deletaUsuario(Long idusuario) {
-        repository.deleteById(idusuario);
-        return "redirect:/produto";
-    }
-
 }

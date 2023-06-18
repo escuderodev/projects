@@ -23,6 +23,7 @@
             <th scope="col" class="col-4">NOME</th>
             <th scope="col" class="col-2">USUARIO</th>
             <th scope="col" class="col-2">SENHA</th>
+            <th scope="col" class="col-2">ATIVO</th>
             <th scope="col" class="col-2">AÇÕES</th>
         </tr>
         </thead>
@@ -31,14 +32,10 @@
             <td th:text="${usuario.nome}"></td>
             <td th:text="${usuario.usuario}"></td>
             <td th:text="${usuario.senha}"></td>
+            <td th:text="${usuario.status}"></td>
             <td>
                 <div class="td_acoes">
                     <button><a th:href="@{/usuario/formulario?id={id}(id=${usuario.idusuario})}" id="editar">Editar</a></button>
-                    <form action="/produto" method="post">
-                        <input type="hidden" name="_method" value="delete">
-                        <input type="hidden" name="idusuario" th:value="${usuario.idusuario}">
-                        <button type="submit" id="btn_excluir">Excluir</button>
-                    </form>
                 </div>
             </td>
         </tr>

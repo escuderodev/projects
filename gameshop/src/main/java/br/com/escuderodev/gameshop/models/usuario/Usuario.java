@@ -16,12 +16,14 @@ public class Usuario {
     private String nome;
     private String usuario;
     private String senha;
+    private Boolean status;
 
     public Usuario(DadosCadastroUsuario dados) {
         this.idusuario = dados.idusuario();
         this.nome = dados.nome();
         this.usuario = dados.usuario();
         this.senha = dados.senha();
+        this.status = true;
     }
 
     public Usuario() {
@@ -32,5 +34,6 @@ public class Usuario {
         this.nome = dados.nome();
         this.usuario = dados.usuario();
         this.senha = dados.senha();
+        this.status = dados.status();
     }
 }
