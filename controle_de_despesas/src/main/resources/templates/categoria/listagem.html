@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout">
+<head th:replace="~{template :: head}"></head>
+<body>
+
+<header th:replace="~{template :: header}"></header>
+
+<main class="main_listagem">
+    <div class="lista_categoria_container">
+        <div>
+            <h1 class="title">Lista de Categoria</h1>
+        </div>
+        <div>
+            <button type="button" class="btn btn-dark"><a href="/categoria/formulario" class="btn_novo">Nova Categoria</a></button>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" class="col-2">ID</th>
+                <th scope="col" class="col-8">CATEGORIA</th>
+                <th scope="col" class="col-2">AÇÕES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="categoria : ${listaDeCategorias}">
+                <td th:text="${categoria.idCategoria}"></td>
+                <td th:text="${categoria.categoria}"></td>
+                <td>
+                    <div class="td_acoes">
+                        <button class="btn btn-primary btn_editar"><a th:href="@{/categoria/formulario?id={id}(id=${categoria.idCategoria})}" id="editar">Editar</a></button>
+                        <form action="/categoria" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <input type="hidden" name="idCategoria" th:value="${categoria.idCategoria}">
+                            <button class="btn btn-danger" type="submit" id="btn_excluir">Excluir</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<footer th:replace="~{template :: footer}"></footer>
+</body>
+</html>

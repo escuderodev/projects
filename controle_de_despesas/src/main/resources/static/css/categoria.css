@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    height: 78vh;
+}
+
+.main_listagem {
+    height: 80vh;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo_link:hover {
+    color: black;
+}
+
+span {
+    color: red;
+}
+
+.header, .footer {
+    height: 10vh;
+    color: black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding-top: 1rem;
+}
+
+.footer_link{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.footer_link:hover{
+    text-decoration: none;
+    color: red;
+}
+
+.form_container_categoria {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.input_categoria {
+    text-align: center;
+}
+
+input {
+    border: 1px solid black;
+    outline: none;
+}
+
+#categoria {
+    width: 80%;
+    padding: .5rem 1rem;
+}
+
+.lista_categoria_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.btn_novo {
+    color: white;
+    width: 80px;
+    display: block;
+    font-size: .7rem;
+}
+
+.table {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.td_acoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#editar {
+    color: white;
+    font-size: .7rem;
+}
+
+#btn_excluir, .btn_editar {
+    font-size: .7rem;
+}
+
+.nav_link {
+    color: black;
+}
+
+.nav_link:hover {
+    color: red;
+}

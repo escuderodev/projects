@@ -14,13 +14,13 @@ import java.util.List;
 @ToString
 public class Categoria {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idCategoria;
     private String categoria;
     @OneToMany
     private List<Movimentacao> movimentacao;
 
     public Categoria(DadosCadastroCategoria dados) {
-        this.id = dados.id();
+        this.idCategoria = dados.idCategoria();
         this.categoria = dados.categoria();
     }
 

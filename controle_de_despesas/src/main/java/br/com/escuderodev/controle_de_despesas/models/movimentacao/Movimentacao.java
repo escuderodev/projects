@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 public class Movimentacao {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idMovimentacao;
     private String descricao;
     private BigDecimal valor;
     @Enumerated
@@ -23,7 +23,7 @@ public class Movimentacao {
     private Categoria categoria;
 
     public Movimentacao(DadosCadastroMovimentacao dados) {
-        this.id = dados.id();
+        this.idMovimentacao = dados.idMovimentacao();
         this.descricao = dados.descricao();
         this.valor = dados.valor();
         this.tipo = dados.tipo();

@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/categoria.css" th:href="@{/css/categoria.css}">
+    <title>Finanças</title>
 </head>
-<body>
 
-</body>
-</html>
+<header th:fragment="header" class="header">
+    <div>
+        <p class="logo mb-0"><a href="/categoria" class="logo_link">Control<span>Desp</span></a></p>
+    </div>
+    <nav>
+        <ul class="nav">
+            <li class="nav_item"><a class="nav_link" href="#">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<footer th:fragment="footer" class="footer">
+    <p>Desenvolvido por <a class="footer_link" href="https://escuderodev.com.br/" target="_blank">Escudero<span>Dev</span></a> - 2023</p>
+</footer>
