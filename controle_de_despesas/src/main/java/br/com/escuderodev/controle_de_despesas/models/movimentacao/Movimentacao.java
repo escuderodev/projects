@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import java.math.BigDecimal;
 
 @Entity
@@ -20,6 +19,8 @@ public class Movimentacao {
     private BigDecimal valor;
     @Enumerated
     private TipoMovimentacao tipo;
+    @ManyToOne
+    private Categoria categoria;
 
     public Movimentacao(DadosCadastroMovimentacao dados) {
         this.id = dados.id();

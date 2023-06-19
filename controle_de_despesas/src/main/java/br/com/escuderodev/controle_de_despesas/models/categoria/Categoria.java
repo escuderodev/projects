@@ -1,13 +1,12 @@
 package br.com.escuderodev.controle_de_despesas.models.categoria;
 
-import br.com.escuderodev.controle_de_despesas.models.movimentacao.DadosAtualizaMovimentacao;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import br.com.escuderodev.controle_de_despesas.models.movimentacao.Movimentacao;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,6 +16,8 @@ public class Categoria {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String categoria;
+    @OneToMany
+    private List<Movimentacao> movimentacao;
 
     public Categoria(DadosCadastroCategoria dados) {
         this.id = dados.id();
