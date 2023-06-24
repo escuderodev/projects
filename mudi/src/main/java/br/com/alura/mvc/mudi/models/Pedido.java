@@ -1,6 +1,8 @@
 package br.com.alura.mvc.mudi.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -84,4 +86,5 @@ public class Pedido {
     public void setStatus(StatusPedido status) {
         this.status = status;
     }
+
 }
